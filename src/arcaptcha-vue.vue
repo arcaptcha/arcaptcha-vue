@@ -47,6 +47,9 @@ export default /*#__PURE__*/ {
         execute() {
             arcaptcha.execute(this.widget_id);
         },
+        reset() {
+            arcaptcha.reset(this.widget_id);
+        },
         loadCaptcha() {
             if (this.callback)
                 window[`arcaptcha_callback_${this.id}`] = this.callback;
@@ -58,9 +61,6 @@ export default /*#__PURE__*/ {
                     ? `arcaptcha_callback_${this.id}`
                     : null,
             });
-        },
-        resetCaptcha() {
-            arcaptcha.reset(this.widget_id);
         },
         loadScript(url, script, id = null) {
             return new Promise(function (resolve) {
