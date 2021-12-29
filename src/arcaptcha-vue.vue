@@ -7,7 +7,9 @@ export default /*#__PURE__*/ {
         invisible: {
             default: false,
         },
-        callback: {},
+        callback: {
+            default: false,
+        },
     },
     data() {
         return {
@@ -52,7 +54,7 @@ export default /*#__PURE__*/ {
             this.widget_id = arcaptcha.render(`#${this.id}`, {
                 "site-key": this.site_key,
                 size: this.invisible ? "invisible" : "",
-                callback: this.invisible
+                callback: this.callback
                     ? `arcaptcha_callback_${this.id}`
                     : null,
             });
