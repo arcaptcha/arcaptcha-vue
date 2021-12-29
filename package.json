@@ -1,7 +1,26 @@
 {
   "name": "arcaptcha-vue",
-  "version": "0.0.3",
-  "description": "",
+  "version": "0.0.4",
+  "description": "ARCaptcha vue component",
+  "author": "ARCaptcha team and contributors",
+  "homepage": "https://github.com/arcaptcha/arcaptcha-vue",
+  "organization": "ARCaptcha",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arcaptcha/arcaptcha-vue.git",
+    "web": "https://github.com/arcaptcha/arcaptcha-vue"
+  },
+  "bugs": {
+    "url": "https://github.com/arcaptcha/arcaptcha-vue/issues"
+  },
+  "keywords": [
+    "aracptcha",
+    "captcha",
+    "component",
+    "vue",
+    "vue-component"
+  ],
   "main": "dist/arcaptcha-vue.ssr.js",
   "browser": "dist/arcaptcha-vue.esm.js",
   "module": "dist/arcaptcha-vue.esm.js",
