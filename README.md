@@ -42,11 +42,14 @@ or via script tag (`Vue` must be globally available)
 
 #### Props
 
-| Name        | Values/Type | Required | Default | Description                                                                                                    |
-| ----------- | ----------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------- |
-| `sitekey`   | String      | **Yes**  | `-`     | Your sitekey. Please visit [ARCaptcha](https://arcaptcha.ir) and sign up to get a sitekey.                     |
-| `invisible` | Boolean     | No       | `false` | This specifies the visibility of the checkbox. To activate arcaptcha in invisible mode set this option to true |
-| `callback`  | Function    | No       | `null`  | A function that will be called after successfull challenge solving.                                            |
+| Name        | Values/Type | Required | Default  | Description                                                                                                    |
+| ----------- | ----------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------- |
+| `sitekey`   | String      | **Yes**  | `-`      | Your sitekey. Please visit [ARCaptcha](https://arcaptcha.ir) and sign up to get a sitekey.                     |
+| `invisible` | Boolean     | No       | `false`  | This specifies the visibility of the checkbox. To activate arcaptcha in invisible mode set this option to true |
+| `callback`  | Function    | No       | `null`   | A function that will be called after successfull challenge solving.                                            |
+| `color`     | String      | No       | `normal` | Color of every colored element in widget and challenge.                                                        |
+| `theme`     | String      | No       | `light`  | Theme of widget and challenge.(Available options: `light`/`dark`)                                              |
+| `lang`      | String      | No       | `fa`     | Language is used in widget and challenge contents.(Available options : `en`/`fa`)                              |
 
 ### Methods
 
