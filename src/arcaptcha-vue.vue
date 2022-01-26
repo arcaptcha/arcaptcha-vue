@@ -10,6 +10,18 @@ export default /*#__PURE__*/ {
         callback: {
             default: false,
         },
+        color: {
+            type: String,
+            default: "normal",
+        },
+        lang: {
+            type: String,
+            default: "en",
+        },
+        theme: {
+            type: String,
+            default: "light",
+        },
     },
     data() {
         return {
@@ -57,6 +69,9 @@ export default /*#__PURE__*/ {
             this.widget_id = arcaptcha.render(`#${this.id}`, {
                 "site-key": this.site_key,
                 size: this.invisible ? "invisible" : "",
+                color: this.color,
+                theme: this.theme,
+                lang: this.lang,
                 callback: this.callback
                     ? `arcaptcha_callback_${this.id}`
                     : null,
