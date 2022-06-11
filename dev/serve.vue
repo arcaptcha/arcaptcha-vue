@@ -1,17 +1,17 @@
 <script>
-import Vue from 'vue';
-import ArcaptchaVue from '@/arcaptcha-vue.vue';
+import Vue from "vue";
+import ArcaptchaVue from "@/arcaptcha-vue.vue";
 
 export default Vue.extend({
-  name: 'ServeDev',
+  name: "ServeDev",
   components: {
-    ArcaptchaVue
-  }
+    ArcaptchaVue,
+  },
 });
 </script>
 
 <template>
   <div id="app">
-    <arcaptcha-vue />
+    <arcaptcha-vue site_key="0jgxzoib9c" />
   </div>
 </template>
