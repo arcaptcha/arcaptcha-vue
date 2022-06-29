@@ -66,7 +66,7 @@ export default /*#__PURE__*/ {
         window[`arcaptcha_callback_${this.id}`] = this.callback;
 
       this.widget_id = arcaptcha.render(`#${this.id}`, {
-        "site-key": "4pmvo77wq2",
+        "site-key": this.site_key,
         size: this.invisible ? "invisible" : "",
         color: this.color,
         theme: this.theme,
@@ -74,8 +74,8 @@ export default /*#__PURE__*/ {
         callback: this.callback ? `arcaptcha_callback_${this.id}` : null,
       });
     },
-    loadScript(url, script, id = null) {
-      return new Promise(function (resolve) {
+    loadScript(url) {
+      //return new Promise(function (resolve) {
         var my_script = document.head.querySelector("#arcptcha-script");
         let script = my_script || document.createElement("script");
         script.src = url;
@@ -84,22 +84,22 @@ export default /*#__PURE__*/ {
           window.arcaptchaWidgetLoading = new Promise((resolve, reject) => {
             script.onload = () => {
               resolve();
+              this.initialize()
             };
           });
         }
         if (my_script) {
           window.arcaptchaWidgetLoading.then(() => {
-            resolve();
+            this.initialize()
+            //resolve();
           });
         }
         if (!my_script) {
           document.head.appendChild(script);
         }
-      });
+   //   });
     },
-  },
-  mounted() {
-    this.loadScript("https://widget.arcaptcha.ir/1/api.js").then((res) => {
+    initialize() {
       this.loadCaptcha();
       addEventListener(
         `arcaptcha-token-changed-${this.widget_id}`,
@@ -107,7 +107,11 @@ export default /*#__PURE__*/ {
           this._value = event.detail;
         }
       );
-    });
+    },
+  },
+  mounted() {
+    this.loadScript("https://widget.arcaptcha.ir/1/api.js");
+    //.then((res) => { });
   },
 };
 </script>
