@@ -13,5 +13,6 @@ export default Vue.extend({
 <template>
   <div id="app">
     <arcaptcha-vue />
+    <arcaptcha-vue />
   </div>
 </template>
