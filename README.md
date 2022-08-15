@@ -44,7 +44,7 @@ or via script tag (`Vue` must be globally available)
 
 | Name        | Values/Type | Required | Default  | Description                                                                                                    |
 | ----------- | ----------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------- |
-| `sitekey`   | String      | **Yes**  | `-`      | Your sitekey. Please visit [ARCaptcha](https://arcaptcha.ir) and sign up to get a sitekey.                     |
+| `site_key`   | String      | **Yes**  | `-`      | Your sitekey. Please visit [ARCaptcha](https://arcaptcha.ir) and sign up to get a sitekey.                     |
 | `invisible` | Boolean     | No       | `false`  | This specifies the visibility of the checkbox. To activate arcaptcha in invisible mode set this option to true |
 | `callback`  | Function    | No       | `null`   | A function that will be called after successfull challenge solving.                                            |
 | `color`     | String      | No       | `normal` | Color of every colored element in widget and challenge.                                                        |

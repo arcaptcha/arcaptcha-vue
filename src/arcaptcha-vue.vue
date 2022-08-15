@@ -16,7 +16,7 @@ export default /*#__PURE__*/ {
     },
     lang: {
       type: String,
-      default: "en",
+      default: "fa",
     },
     theme: {
       type: String,
