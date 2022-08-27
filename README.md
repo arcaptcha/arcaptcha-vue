@@ -26,7 +26,7 @@ or via script tag (`Vue` must be globally available)
 
   ```
   <template>
-      <arcaptcha-vue sitekey="site_key"></arcaptcha-vue>
+      <arcaptcha-vue site_key="site_key"></arcaptcha-vue>
   </template>
 
   <script>
