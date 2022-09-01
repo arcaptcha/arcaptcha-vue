@@ -10,6 +10,9 @@ export default /*#__PURE__*/ {
     callback: {
       default: false,
     },
+    rendered_callback: {
+      default: false,
+    },
     error_callback: {
       default: false,
     },
@@ -77,16 +80,14 @@ export default /*#__PURE__*/ {
       if (this.callback)
         window[`arcaptcha_callback_${this.id}`] = this.callback;
       if (this.rendered_callback)
-        window[`arcaptcha_rendered_callback_${this.id}`] = this.rendered_callback;
+        window[`arcaptcha_rendered_callback_${this.id}`] =
+          this.rendered_callback;
       if (this.error_callback)
-        window[`arcaptcha_error_callback_${this.id}`] =
-          this.error_callback;
+        window[`arcaptcha_error_callback_${this.id}`] = this.error_callback;
       if (this.reset_callback)
-        window[`arcaptcha_reset_callback_${this.id}`] =
-          this.reset_callback;
+        window[`arcaptcha_reset_callback_${this.id}`] = this.reset_callback;
       if (this.expired_callback)
-        window[`arcaptcha_expired_callback_${this.id}`] =
-          this.expired_callback;
+        window[`arcaptcha_expired_callback_${this.id}`] = this.expired_callback;
       if (this.chlexpired_callback)
         window[`arcaptcha_chlexpired_callback_${this.id}`] =
           this.chlexpired_callback;
@@ -100,7 +101,9 @@ export default /*#__PURE__*/ {
         theme: this.theme,
         lang: this.lang,
         callback: this.callback ? `arcaptcha_callback_${this.id}` : null,
-        rendered_callback: this.rendered_callback ? `arcaptcha_rendered_callback_${this.id}` : null,
+        rendered_callback: this.rendered_callback
+          ? `arcaptcha_rendered_callback_${this.id}`
+          : null,
         error_callback: this.error_callback
           ? `arcaptcha_error_callback_${this.id}`
           : null,
