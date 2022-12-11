@@ -124,6 +124,8 @@ export default /*#__PURE__*/ {
       let script = my_script || document.createElement("script");
       script.src = url;
       script.id = "arcptcha-script";
+      script.async = true;
+      script.defer = true;
       if (!my_script) {
         window.arcaptchaWidgetLoading = new Promise((resolve, reject) => {
           script.onload = () => {
