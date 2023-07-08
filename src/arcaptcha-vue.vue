@@ -71,10 +71,10 @@ export default /*#__PURE__*/ {
       this.setClasses("");
     },
     execute() {
-      arcaptcha.execute(this.widget_id);
+      return arcaptcha.execute(this.widget_id);
     },
     reset() {
-      arcaptcha.reset(this.widget_id);
+      return arcaptcha.reset(this.widget_id);
     },
     registerCallback() {
       if (this.callback)
