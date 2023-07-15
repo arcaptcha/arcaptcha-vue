@@ -20,21 +20,81 @@ or via script tag (`Vue` must be globally available)
   <script src="https://unpkg.com/arcaptcha-vue"></script>
   ```
 
-#### Basic Usage
+#### Usage
 
-- vue2:
+- Basic:
 
-  ```
+  ```javascript
   <template>
-      <arcaptcha-vue site_key="site_key"></arcaptcha-vue>
+      <arcaptcha-vue site_key="YOUR_SITE_KEY"></arcaptcha-vue>
   </template>
 
   <script>
     import ArcaptchaVue from 'arcaptcha-vue';
     export default {
-      ...
       components: { ArcaptchaVue }
     };
+  </script>
+  ```
+- Invisible:
+
+  ```javascript
+  <template>
+    <div>    
+        <arcaptcha-vue site_key="YOUR_SITE_KEY" :callback="onSuccess" :invisible="true" ref="widget"></arcaptcha-vue>
+
+        <button @click="execute">load invisible captcha</button>
+        <button @click="reset">reset captcha</button>
+
+    </div>
+  </template>
+
+  <script>
+  import ArcaptchaVue from "arcaptcha-vue";
+  export default {
+    components: { ArcaptchaVue },
+    methods: {
+        onSuccess(token) {
+            console.log("Captcha Solved! token:", token);
+        },
+        reset() {
+            this.$refs.widget.reset();
+        },
+        execute() {
+            this.$refs.widget.execute();
+        },
+    },
+  };
+  </script>
+  ```
+- Invisible with promise:
+
+  ```javascript
+  <template>
+    <div>    
+        <arcaptcha-vue site_key="YOUR_SITE_KEY" :invisible="true" ref="widget"></arcaptcha-vue>
+
+        <button @click="execute">load invisible captcha with promise</button>
+        <button @click="reset">reset captcha</button>
+
+    </div>
+  </template>
+
+  <script>
+  import ArcaptchaVue from "arcaptcha-vue";
+  export default {
+    components: { ArcaptchaVue },
+    methods: {
+        reset() {
+            this.$refs.widget.reset();
+        },
+        execute() {
+              this.$refs.widget.execute().then((token)=>{
+                  console.log("Captcha Solved! token:", token);
+              })
+          },
+      },
+  };
   </script>
   ```
 
