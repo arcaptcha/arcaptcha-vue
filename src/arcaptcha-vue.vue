@@ -76,6 +76,9 @@ export default /*#__PURE__*/ {
     reset() {
       return arcaptcha.reset(this.widget_id);
     },
+    disableErrorPrint() {
+      return arcaptcha.disableErrorPrint(this.widget_id);
+    },
     registerCallback() {
       if (this.callback)
         window[`arcaptcha_callback_${this.id}`] = this.callback;

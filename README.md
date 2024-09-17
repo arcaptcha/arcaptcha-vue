@@ -36,11 +36,12 @@ or via script tag (`Vue` must be globally available)
     };
   </script>
   ```
+
 - Invisible:
 
   ```javascript
   <template>
-    <div>    
+    <div>
         <arcaptcha-vue site_key="YOUR_SITE_KEY" :callback="onSuccess" :invisible="true" ref="widget"></arcaptcha-vue>
 
         <button @click="execute">load invisible captcha</button>
@@ -67,11 +68,12 @@ or via script tag (`Vue` must be globally available)
   };
   </script>
   ```
+
 - Invisible with promise:
 
   ```javascript
   <template>
-    <div>    
+    <div>
         <arcaptcha-vue site_key="YOUR_SITE_KEY" :invisible="true" ref="widget"></arcaptcha-vue>
 
         <button @click="execute">load invisible captcha with promise</button>
@@ -102,26 +104,27 @@ or via script tag (`Vue` must be globally available)
 
 #### Props
 
-| Name        | Values/Type | Required | Default  | Description                                                                                                    |
-| ----------- | ----------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------- |
-| site_key   | String      | **Yes**  | -     | Your sitekey. Please visit [ARCaptcha](https://arcaptcha.ir) and sign up to get a sitekey.                     |
-| invisible | Boolean     | No       | false  | This specifies the visibility of the checkbox. To activate arcaptcha in invisible mode set this option to true |                                          |
-| color     | String      | No       | normal | Color of every colored element in widget and challenge.                                                        |
-| theme     | String      | No       | light  | Theme of widget and challenge.(Available options: `light`/`dark`)                                              |
-| lang      | String      | No       | fa    | Language is used in widget and challenge contents.(Available options : `en`/`fa`)                              |
-|    callback    |    Function    |  NO  |  null  | This function would be called after solving captcha |  
-|    rendered_callback    |    Function    |  NO  |  null  | This function would be called after rendering captcha |  
-|    error_callback    |    Function    |  NO  |  null  | This function would be called after error |  
-|    reset_callback    |    Function    |  NO  |  null  | This function would be called after reseting captcha |  
-|    expired_callback    |    Function    |  NO  |  null  | This function would be called after expiring |  
-|    chlexpired_callback    |    Function    |  NO  |  null  | This function would be called after challange expiration | 
+| Name                | Values/Type | Required | Default | Description                                                                                                    |
+| ------------------- | ----------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------- | --- |
+| site_key            | String      | **Yes**  | -       | Your sitekey. Please visit [ARCaptcha](https://arcaptcha.ir) and sign up to get a sitekey.                     |
+| invisible           | Boolean     | No       | false   | This specifies the visibility of the checkbox. To activate arcaptcha in invisible mode set this option to true |     |
+| color               | String      | No       | normal  | Color of every colored element in widget and challenge.                                                        |
+| theme               | String      | No       | light   | Theme of widget and challenge.(Available options: `light`/`dark`)                                              |
+| lang                | String      | No       | fa      | Language is used in widget and challenge contents.(Available options : `en`/`fa`)                              |
+| callback            | Function    | NO       | null    | This function would be called after solving captcha                                                            |
+| rendered_callback   | Function    | NO       | null    | This function would be called after rendering captcha                                                          |
+| error_callback      | Function    | NO       | null    | This function would be called after error                                                                      |
+| reset_callback      | Function    | NO       | null    | This function would be called after reseting captcha                                                           |
+| expired_callback    | Function    | NO       | null    | This function would be called after expiring                                                                   |
+| chlexpired_callback | Function    | NO       | null    | This function would be called after challange expiration                                                       |
 
 ### Methods
 
-| Method      | Description                                  |
-| ----------- | -------------------------------------------- |
-| `execute()` | Programmatically trigger a challenge request |
-| `reset()`   | Reset the current challenge                  |
+| Method                | Description                                                                                                 |
+| --------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `execute()`           | Programmatically trigger a challenge request                                                                |
+| `reset()`             | Reset the current challenge                                                                                 |
+| `disableErrorPrint()` | Disable errors printed below the captcha box(You should handle errors yourself by setting `error_callback`) |
 
 ### FAQ
 
