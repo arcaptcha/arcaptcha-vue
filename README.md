@@ -105,9 +105,9 @@ or via script tag (`Vue` must be globally available)
 #### Props
 
 | Name                | Values/Type | Required | Default | Description                                                                                                    |
-| ------------------- | ----------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------- | --- |
+| ------------------- | ----------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------- |
 | site_key            | String      | **Yes**  | -       | Your sitekey. Please visit [ARCaptcha](https://arcaptcha.ir) and sign up to get a sitekey.                     |
-| invisible           | Boolean     | No       | false   | This specifies the visibility of the checkbox. To activate arcaptcha in invisible mode set this option to true |     |
+| invisible           | Boolean     | No       | false   | This specifies the visibility of the checkbox. To activate arcaptcha in invisible mode set this option to true |
 | color               | String      | No       | normal  | Color of every colored element in widget and challenge.                                                        |
 | theme               | String      | No       | light   | Theme of widget and challenge.(Available options: `light`/`dark`)                                              |
 | lang                | String      | No       | fa      | Language is used in widget and challenge contents.(Available options : `en`/`fa`)                              |
