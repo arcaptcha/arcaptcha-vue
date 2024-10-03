@@ -2,6 +2,8 @@
 
 ARCaptcha Component Library for Vue.js which is Compatible with Vue 2. (Vue3 support is under development)
 
+If you use Vue version 3 please go to [this link](https://github.com/arcaptcha/arcaptcha-vue3).
+
 ## Installation
 
 You can install this library via npm with:
