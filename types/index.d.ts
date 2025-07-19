@@ -1,16 +1,13 @@
-import { DefineComponent } from 'vue'
+import type { Component } from 'vue'
 
 export interface ArcaptchaVueProps {
   site_key: string
-
-  // Optional props
   size?: 'normal' | 'invisible'
   theme?: 'light' | 'dark'
   color?: string
   lang?: 'fa' | 'en'
   error_print?: 0 | 1
 
-  // Event Callbacks
   callback?: (token?: string) => void
   rendered_callback?: () => void
   error_callback?: () => void
@@ -23,5 +20,5 @@ export interface ArcaptchaVueProps {
   closed_callback?: () => void
 }
 
-declare const component: DefineComponent<ArcaptchaVueProps>
+declare const component: Component
 export default component
