@@ -15,7 +15,7 @@
     "url": "https://github.com/arcaptcha/arcaptcha-vue/issues"
   },
   "keywords": [
-    "aracptcha",
+    "arcaptcha",
     "captcha",
     "component",
     "vue",
@@ -25,9 +25,11 @@
   "browser": "dist/arcaptcha-vue.esm.js",
   "module": "dist/arcaptcha-vue.esm.js",
   "unpkg": "dist/arcaptcha-vue.min.js",
+  "types": "types/index.d.ts",
   "files": [
     "dist/*",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "types"
   ],
   "sideEffects": false,
   "scripts": {
