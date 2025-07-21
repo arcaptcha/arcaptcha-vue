@@ -81,6 +81,9 @@ function _nonIterableRest() {
     chlexpired_callback: {
       default: false
     },
+    closed_callback: {
+      default: false
+    },
     color: {
       type: String,
       default: "normal"
@@ -133,28 +136,20 @@ function _nonIterableRest() {
     disableErrorPrint: function disableErrorPrint() {
       return arcaptcha.disableErrorPrint(this.widget_id);
     },
-    registerCallback: function registerCallback() {
-      if (this.callback) window["arcaptcha_callback_".concat(this.id)] = this.callback;
-      if (this.rendered_callback) window["arcaptcha_rendered_callback_".concat(this.id)] = this.rendered_callback;
-      if (this.error_callback) window["arcaptcha_error_callback_".concat(this.id)] = this.error_callback;
-      if (this.reset_callback) window["arcaptcha_reset_callback_".concat(this.id)] = this.reset_callback;
-      if (this.expired_callback) window["arcaptcha_expired_callback_".concat(this.id)] = this.expired_callback;
-      if (this.chlexpired_callback) window["arcaptcha_chlexpired_callback_".concat(this.id)] = this.chlexpired_callback;
-    },
     loadCaptcha: function loadCaptcha() {
-      this.registerCallback();
       this.widget_id = arcaptcha.render("#".concat(this.id), {
         "site-key": this.site_key,
         size: this.invisible ? "invisible" : "",
         color: this.color,
         theme: this.theme,
         lang: this.lang,
-        callback: this.callback ? "arcaptcha_callback_".concat(this.id) : null,
-        rendered_callback: this.rendered_callback ? "arcaptcha_rendered_callback_".concat(this.id) : null,
-        error_callback: this.error_callback ? "arcaptcha_error_callback_".concat(this.id) : null,
-        reset_callback: this.reset_callback ? "arcaptcha_reset_callback_".concat(this.id) : null,
-        expired_callback: this.expired_callback ? "arcaptcha_expired_callback_".concat(this.id) : null,
-        chlexpired_callback: this.chlexpired_callback ? "arcaptcha_chlexpired_callback_".concat(this.id) : null
+        callback: this.callback,
+        rendered_callback: this.rendered_callback,
+        error_callback: this.error_callback,
+        reset_callback: this.reset_callback,
+        expired_callback: this.expired_callback,
+        chlexpired_callback: this.chlexpired_callback,
+        closed_callback: this.closed_callback
       });
     },
     loadScript: function loadScript(url) {
@@ -299,10 +294,10 @@ var __vue_staticRenderFns__ = [];
 var __vue_inject_styles__ = undefined;
 /* scoped */
 
-var __vue_scope_id__ = "data-v-5de17572";
+var __vue_scope_id__ = "data-v-73f9c7a5";
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-5de17572";
+var __vue_module_identifier__ = "data-v-73f9c7a5";
 /* functional template */
 
 var __vue_is_functional_template__ = false;

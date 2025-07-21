@@ -119,6 +119,7 @@ or via script tag (`Vue` must be globally available)
 | reset_callback      | Function    | NO       | null    | This function would be called after reseting captcha                                                           |
 | expired_callback    | Function    | NO       | null    | This function would be called after expiring                                                                   |
 | chlexpired_callback | Function    | NO       | null    | This function would be called after challange expiration                                                       |
+| closed_callback     | Function    | NO       | null    | This function would be called after a challenge is closed by user,programmatically or expiration               |
 
 ### Methods
 

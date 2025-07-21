@@ -24,6 +24,9 @@ var script = {
     chlexpired_callback: {
       default: false
     },
+    closed_callback: {
+      default: false
+    },
     color: {
       type: String,
       default: "normal"
@@ -88,29 +91,20 @@ var script = {
       return arcaptcha.disableErrorPrint(this.widget_id);
     },
 
-    registerCallback() {
-      if (this.callback) window[`arcaptcha_callback_${this.id}`] = this.callback;
-      if (this.rendered_callback) window[`arcaptcha_rendered_callback_${this.id}`] = this.rendered_callback;
-      if (this.error_callback) window[`arcaptcha_error_callback_${this.id}`] = this.error_callback;
-      if (this.reset_callback) window[`arcaptcha_reset_callback_${this.id}`] = this.reset_callback;
-      if (this.expired_callback) window[`arcaptcha_expired_callback_${this.id}`] = this.expired_callback;
-      if (this.chlexpired_callback) window[`arcaptcha_chlexpired_callback_${this.id}`] = this.chlexpired_callback;
-    },
-
     loadCaptcha() {
-      this.registerCallback();
       this.widget_id = arcaptcha.render(`#${this.id}`, {
         "site-key": this.site_key,
         size: this.invisible ? "invisible" : "",
         color: this.color,
         theme: this.theme,
         lang: this.lang,
-        callback: this.callback ? `arcaptcha_callback_${this.id}` : null,
-        rendered_callback: this.rendered_callback ? `arcaptcha_rendered_callback_${this.id}` : null,
-        error_callback: this.error_callback ? `arcaptcha_error_callback_${this.id}` : null,
-        reset_callback: this.reset_callback ? `arcaptcha_reset_callback_${this.id}` : null,
-        expired_callback: this.expired_callback ? `arcaptcha_expired_callback_${this.id}` : null,
-        chlexpired_callback: this.chlexpired_callback ? `arcaptcha_chlexpired_callback_${this.id}` : null
+        callback: this.callback,
+        rendered_callback: this.rendered_callback,
+        error_callback: this.error_callback,
+        reset_callback: this.reset_callback,
+        expired_callback: this.expired_callback,
+        chlexpired_callback: this.chlexpired_callback,
+        closed_callback: this.closed_callback
       });
     },
 
@@ -258,7 +252,7 @@ var __vue_staticRenderFns__ = [];
 const __vue_inject_styles__ = undefined;
 /* scoped */
 
-const __vue_scope_id__ = "data-v-5de17572";
+const __vue_scope_id__ = "data-v-73f9c7a5";
 /* module identifier */
 
 const __vue_module_identifier__ = undefined;
